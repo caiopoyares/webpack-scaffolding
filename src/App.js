@@ -1,8 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import "./assets/sass/index.scss";
+import fakeApi from "./fakeApi";
+
+import Header from "./components/Header";
+import Post from "./components/Post";
 
 const App = () => {
-  return <h1 class="main-title">Webpack is so so so so fucking awesome</h1>;
+  const [posts] = useState(fakeApi);
+
+  return (
+    <>
+      <Header />
+      <Post posts={posts} />
+    </>
+  );
 };
 
 export default App;
