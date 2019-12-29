@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import Strong from "./style";
 
 const PostHeader = ({ imageUrl, author, time }) => {
   return (
@@ -9,7 +10,7 @@ const PostHeader = ({ imageUrl, author, time }) => {
       </div>
       <div>
         <p className="author">
-          <strong>{author}</strong>
+          <Strong color="green">{author}</Strong>
         </p>
         <p className="time">{time}</p>
       </div>
