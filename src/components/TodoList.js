@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
-import { ADD_TODO } from "../store/actions/todos";
+import { ADD_TODO, ADD_TODO_REQUEST } from "../store/actions/todos";
 
 const TodoList = ({ todos, addTodo }) => {
   const [todoInput, setTodoInput] = useState("");
@@ -42,7 +42,9 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    addTodo: todo => dispatch({ type: ADD_TODO, payload: todo })
+    addTodo: todo => {
+      dispatch({ type: ADD_TODO_REQUEST, payload: todo });
+    }
   };
 };
 
